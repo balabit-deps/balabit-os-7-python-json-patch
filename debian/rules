@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=jsonpatch
+export PYBUILD_BEFORE_TEST=cp {dir}/tests.py {dir}/tests.js {build_dir}
+export PYBUILD_AFTER_TEST=rm {build_dir}/tests.py {build_dir}/tests.js
+
+%:
+	dh $@ --buildsystem=pybuild --with python2,python3
+
+override_dh_auto_install:
+	dh_auto_install
+	mv $(CURDIR)/debian/python-jsonpatch/usr/bin/jsondiff $(CURDIR)/debian/python-jsonpatch/usr/bin/python2-jsondiff
+	mv $(CURDIR)/debian/python-jsonpatch/usr/bin/jsonpatch $(CURDIR)/debian/python-jsonpatch/usr/bin/python2-jsonpatch
+	mv $(CURDIR)/debian/python3-jsonpatch/usr/bin/jsondiff $(CURDIR)/debian/python3-jsonpatch/usr/bin/python3-jsondiff
+	mv $(CURDIR)/debian/python3-jsonpatch/usr/bin/jsonpatch $(CURDIR)/debian/python3-jsonpatch/usr/bin/python3-jsonpatch

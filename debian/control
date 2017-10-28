@@ -1,0 +1,66 @@
+Source: python-json-patch
+Section: python
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Uploaders: Thomas Goirand <zigo@debian.org>,
+           Geoffrey Thomas <geofft@twosigma.com>
+Build-Depends: debhelper (>= 10),
+               dh-python,
+               python-all,
+               python-setuptools,
+               python3-all,
+               python3-setuptools
+Build-Depends-Indep: python-json-pointer (>= 1.9),
+                     python3-json-pointer (>= 1.9),
+Standards-Version: 4.1.0
+Vcs-Git: https://anonscm.debian.org/git/python-modules/packages/python-json-patch.git
+Vcs-Browser: https://anonscm.debian.org/git/python-modules/packages/python-json-patch.git
+Homepage: https://github.com/stefankoegl/python-json-patch
+
+Package: python-jsonpatch
+Architecture: all
+Depends: python-json-pointer (>= 1.9), ${misc:Depends}, ${python:Depends}
+Description: library to apply JSON patches - Python 2.x
+ Python-json-patch is a Python module (a library) to apply JSON Patches
+ according to the IETF draft specification.
+ .
+ From the IETF site:
+ .
+ JavaScript Object Notation (JSON) [RFC4627] is a common format for the
+ exchange and storage of structured data.  HTTP PATCH [RFC5789] extends the
+ Hypertext Transfer Protocol (HTTP) [RFC2616] with a method to perform partial
+ modifications to resources.
+ .
+ JSON Patch is a format (identified by the media type "application/
+ json-patch") for expressing a sequence of operations to apply to a target JSON
+ document, suitable for use with the HTTP PATCH method.
+ .
+ This format is also potentially useful in other cases when it's necessary to
+ make partial updates to a JSON document.
+ .
+ This package provides the Python 2.x module.
+
+Package: python3-jsonpatch
+Architecture: all
+Depends: python3-json-pointer (>= 1.9), ${misc:Depends}, ${python3:Depends}
+Recommends: ${python3:Recommends}
+Description: library to apply JSON patches - Python 3.x
+ Python-json-patch is a Python module (a library) to apply JSON Patches
+ according to the IETF draft specification.
+ .
+ From the IETF site:
+ .
+ JavaScript Object Notation (JSON) [RFC4627] is a common format for the
+ exchange and storage of structured data.  HTTP PATCH [RFC5789] extends the
+ Hypertext Transfer Protocol (HTTP) [RFC2616] with a method to perform partial
+ modifications to resources.
+ .
+ JSON Patch is a format (identified by the media type "application/
+ json-patch") for expressing a sequence of operations to apply to a target JSON
+ document, suitable for use with the HTTP PATCH method.
+ .
+ This format is also potentially useful in other cases when it's necessary to
+ make partial updates to a JSON document.
+ .
+ This package provides the Python 3.x module.
